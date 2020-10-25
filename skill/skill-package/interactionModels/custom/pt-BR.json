@@ -1,0 +1,122 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "escolha entre",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureBirthdayIntent",
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month"
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.Ordinal"
+            }
+          ],
+          "samples": [
+            "{day} de {month}",
+            "{month} de {year}",
+            "{day} de {month} de {year}",
+            "{day} {month} {year}",
+            "{month} {year}",
+            "eu nasci em {day} {month}",
+            "eu nasci em {day} {month} {year}",
+            "eu nasci em {month} {year}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureBirthdayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "month",
+              "type": "AMAZON.Month",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.631614987512.693280403881"
+              }
+            },
+            {
+              "name": "year",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.631614987512.1591323738463"
+              }
+            },
+            {
+              "name": "day",
+              "type": "AMAZON.Ordinal",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.631614987512.775650266981"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.631614987512.1591323738463",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de que ano?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.631614987512.693280403881",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "de que mês?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.631614987512.775650266981",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "em que dia?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "2"
+}
